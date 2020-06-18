@@ -6,7 +6,7 @@
 </div>
 
 ## About
-A Discord bot that pulls content from social media platforms and sends them to a Discord channel as an embedded message.
+Fun Bot is a Discord bot that pulls content from social media platforms and sends them to a Discord channel as an embedded message.
 
 The current version of this bot is not safe for use on non-personal Discord servers. It has no permission restrictions on its current set of commands.
 
