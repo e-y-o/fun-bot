@@ -1,5 +1,5 @@
+<center> <h1>Fun Bot</h1> </center>
 <div align="center">
-# Fun Bot
 <p>
 <img src="./assets/file.png" width='160'>
 </p>
