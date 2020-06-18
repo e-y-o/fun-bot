@@ -1,0 +1,9 @@
+{
+	"prefix": "?",
+	"token": "Discord bot token",
+
+	"userAgent": "Content pulling bot 0.1 by /u/iamveryspeed",
+	"clientId": "your own reddit API clientId",
+	"clientSecret": "your own reddit API clientSecret",
+	"refreshToken": "your own reddit API refreshToken"
+}
