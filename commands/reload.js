@@ -1,8 +1,13 @@
+const checker = require('../helpers/permcheck.js');
 module.exports = {
 	name: 'reload',
 	description: 'Reloads a command',
 	args: true,
+	perms: ['ADMINISTRATOR'],
 	execute(message, args) {
+		if(!checker.checkPerms(message, this.perms)) {
+			return;
+		}
 		const commandName = args[0].toLowerCase();
 		const command = message.client.commands.get(commandName)
 			|| message.client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));

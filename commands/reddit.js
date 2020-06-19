@@ -34,12 +34,6 @@ module.exports = {
 			}
 		}
 
-		// logging for debugging
-		console.log('Name: ' + subName);
-		console.log('Sort: ' + sort);
-		console.log('Time: ' + time);
-		console.log('Index: ' + postIdx + '\n');
-
 		// pull a submission based on arguments and upload embedded message
 		switch(sort) {
 		case 'hot':
