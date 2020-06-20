@@ -1,17 +1,16 @@
 /**
  * This is a simple bot which pulls reddit content and pushes it to a discord channel as an embed.
- * Uses discord.js and snoowrap.js
+ * Uses discord.js, Twitter for Node.js snoowrap.js
+ * Sources: Discord.js
  */
 const fs = require('fs');
-const { prefix, token, userAgent, clientId, clientSecret, refreshToken } = require('./config.json'); // config file
+const { prefix, token, userAgent, clientId, clientSecret, refreshToken, consumerKey, consumerSecret, bearerToken } = require('./config.json'); // config file
 // require snoowrap.js module. snoowrap is included here rather than in a command file because it requires login tokens.
 const snoowrap = require('snoowrap');
 const Discord = require('discord.js'); // require the discord.js module
+const Twitter = require('twitter');
 
 const client = new Discord.Client(); // create a new discord client
-client.commands = new Discord.Collection(); // retrieve command files
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-
 // create a new snoowrap  requester
 const r = new snoowrap({
 	userAgent: userAgent,
@@ -19,8 +18,16 @@ const r = new snoowrap({
 	clientSecret: clientSecret,
 	refreshToken: refreshToken,
 });
-module.exports = { r, client };
+// create Twitter client
+const t = new Twitter({
+	consumer_key: consumerKey,
+	consumer_secret: consumerSecret,
+	bearer_token: bearerToken,
+});
+module.exports = { r, t, client };
 
+client.commands = new Discord.Collection(); // retrieve command files
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
 	// set a new item in the Collection

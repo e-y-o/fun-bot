@@ -1,3 +1,7 @@
+/**
+ * Sends Reddit post indicated by arguments as an embedded message into the channel the command was sent into.
+ * Sources: None
+ */
 const Discord = require('discord.js'); // require discord.js
 const { r } = require('../index.js'); // take snoowrap from main class
 module.exports = {
@@ -6,7 +10,6 @@ module.exports = {
 	description: 'Pull content from specified subreddit',
 	args: true,
 	usage: '<subreddit> [sort] [time] [post index]',
-
 	execute(message, args) {
 		const PULL_LIMIT = 25; // limit to the number of posts this command will pull
 		const MAX_TEXT_LENGTH = 1000; // maximum character length for embedded text

@@ -1,5 +1,5 @@
 /**
- * Check if message author and bot have required permissions.
+ * Check if message author and bot have required permissions to execute a command.
  */
 module.exports = {
 	checkPerms(message, permList) {

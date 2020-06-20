@@ -1,3 +1,8 @@
+/**
+ * Sends a number of Reddit posts, based on parameters.
+ * @see reddit.js
+ * Sources: None
+ */
 const puller = require('./reddit.js');
 module.exports = {
 	name: 'roulettereddit',

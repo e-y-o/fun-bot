@@ -2,8 +2,12 @@
 	"prefix": "?",
 	"token": "Discord bot token",
 
-	"userAgent": "Content pulling bot 0.1 by /u/iamveryspeed",
-	"clientId": "your own reddit API clientId",
-	"clientSecret": "your own reddit API clientSecret",
-	"refreshToken": "your own reddit API refreshToken"
+	"userAgent": "Content pulling bot 0.2 by Github user e-y-o",
+	"clientId": "Reddit API client ID",
+	"clientSecret": "Reddit API client secret",
+	"refreshToken": "Reddit API refresh token",
+
+	"consumerKey": "Twitter API app key",
+	"consumerSecret": "Twitter API app secret",
+	"bearerToken": "Twitter API app OAuth2 bearer token"
 }

@@ -1,3 +1,7 @@
+/**
+ * Set the bot's username, activity, or profile picture.
+ * Sources: None
+ */
 const { client } = require('../index.js');
 const checker = require('../helpers/permcheck.js');
 module.exports = {
@@ -20,7 +24,7 @@ module.exports = {
 			break;
 		case 'avatar':
 			client.user.setAvatar(args[1])
-				.then(console.log(`avatar set`))
+				.then(console.log('avatar set'))
 				.then(message.channel.send('Avatar was set.'))
 				.catch(console.error);
 			break;

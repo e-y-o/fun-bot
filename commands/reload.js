@@ -1,3 +1,7 @@
+/**
+ * Reloads command indicated by first argument.
+ * Sources: Discord.js
+ */
 const checker = require('../helpers/permcheck.js');
 module.exports = {
 	name: 'reload',
@@ -8,16 +12,18 @@ module.exports = {
 		if(!checker.checkPerms(message, this.perms)) {
 			return;
 		}
-		const commandName = args[0].toLowerCase();
+		const commandName = args[0].toLowerCase(); // command to be reloaded
 		const command = message.client.commands.get(commandName)
 			|| message.client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
+		// Behavior if command does not exist
 		if (!command) {
 			return message.channel.send(`${message.author}: there is no command with name or alias \`${commandName}\``);
 		}
 
 		delete require.cache[require.resolve(`./${command.name}.js`)];
 
+		// Behavior if command is found. Attempts to reload command
 		try {
 			const newCommand = require(`./${command.name}.js`);
 			message.client.commands.set(newCommand.name, newCommand);

@@ -1,3 +1,7 @@
+/**
+ * Sends list of commands or execution information for a specific command.
+ * Sources: Discord.js
+ */
 const { prefix } = require('../config.json');
 module.exports = {
 	name: 'help',
