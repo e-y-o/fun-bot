@@ -89,7 +89,7 @@ module.exports = {
 					.setColor('#0099ff')
 					.setTitle(post.title)
 					.setURL('https://reddit.com' + post.permalink)
-					.setAuthor(post.author.toJSON().name, getRandomIcon())
+					.setAuthor(post.author.toJSON().name, getRandomIcon(), 'https://reddit.com/user/' + post.author.toJSON().name)
 					.setFooter('Reddit', 'https://www.redditinc.com/assets/images/site/reddit-logo.png')
 					.addField(post.subreddit_name_prefixed, mainText, false)
 					.addField('Score', postJSON.score, true)
