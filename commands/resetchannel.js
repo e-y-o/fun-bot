@@ -2,7 +2,6 @@
 /**
  * Deletes and remakes the channel the command is sent into, after user confirmation.
  */
-const checker = require('../helpers/permcheck.js');
 module.exports = {
 	name: 'resetchannel',
 	aliases: ['nuke'],

@@ -9,7 +9,6 @@ const { prefix, token, userAgent, clientId, clientSecret, refreshToken, consumer
 const snoowrap = require('snoowrap');
 const Discord = require('discord.js'); // require the discord.js module
 const Twitter = require('twitter');
-const { checkPerms } = require('./helpers/permcheck');
 
 const client = new Discord.Client(); // create a new discord client
 // create a new snoowrap  requester
