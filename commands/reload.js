@@ -2,16 +2,12 @@
  * Reloads command indicated by first argument.
  * Sources: Discord.js
  */
-const checker = require('../helpers/permcheck.js');
 module.exports = {
 	name: 'reload',
 	description: 'Reloads a command',
 	args: true,
-	perms: ['ADMINISTRATOR'],
+	perms: ['ADMINISTRATOR', 'SEND_MESSAGES'],
 	execute(message, args) {
-		if(!checker.checkPerms(message, this.perms)) {
-			return;
-		}
 		const commandName = args[0].toLowerCase(); // command to be reloaded
 		const command = message.client.commands.get(commandName)
 			|| message.client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));

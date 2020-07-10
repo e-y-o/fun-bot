@@ -3,18 +3,14 @@
  * Sources: None
  */
 const { client } = require('../index.js');
-const checker = require('../helpers/permcheck.js');
 module.exports = {
 	name: 'botset',
 	description: 'Set certain bot properties, like its name, avatar, and activity.',
 	aliases: ['bs'],
 	usage: '<name | avatar | activity> [activity type] <username | url/path | activity>',
 	args: true,
-	perms: ['ADMINISTRATOR'],
+	perms: ['ADMINISTRATOR', 'SEND_MESSAGES'],
 	execute(message, args) {
-		if(!checker.checkPerms(message, this.perms)) {
-			return;
-		}
 		switch(args[0]) {
 		case 'name':
 			client.user.setUsername(args[1])

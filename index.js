@@ -9,6 +9,7 @@ const { prefix, token, userAgent, clientId, clientSecret, refreshToken, consumer
 const snoowrap = require('snoowrap');
 const Discord = require('discord.js'); // require the discord.js module
 const Twitter = require('twitter');
+const { checkPerms } = require('./helpers/permcheck');
 
 const client = new Discord.Client(); // create a new discord client
 // create a new snoowrap  requester
@@ -66,6 +67,23 @@ client.on('message', message => {
 		}
 
 		return message.channel.send(reply);
+	}
+
+	if(command.perms) {
+		if(!message.member.hasPermission('ADMINISTRATOR')) {
+			for(let i = 0; i < command.perms.length; ++i) {
+				if(!message.member.guild.me.hasPermission(command.perms[i])) {
+					return message.reply('you do not have required permissions to execute that command.');
+				}
+			}
+		}
+		if(!message.member.guild.me.hasPermission('ADMINISTRATOR')) {
+			for(let i = 0; i < command.perms.length; ++i) {
+				if(!message.member.guild.me.hasPermission(command.perms[i])) {
+					return message.channel.send('I do not have required permissions to execute that command.');
+				}
+			}
+		}
 	}
 
 	if (!cooldowns.has(command.name)) {

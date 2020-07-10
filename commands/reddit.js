@@ -10,6 +10,7 @@ module.exports = {
 	description: 'Pull content from specified subreddit',
 	args: true,
 	usage: '<subreddit> [sort] [time] [post index]',
+	perms: ['SEND_MESSAGES'],
 	execute(message, args) {
 		const PULL_LIMIT = 25; // limit to the number of posts this command will pull
 		const MAX_TEXT_LENGTH = 1000; // maximum character length for embedded text

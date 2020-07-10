@@ -11,6 +11,7 @@ module.exports = {
 	usage: '<subreddit> [sort] [time]',
 	args: true,
 	cooldown: 10,
+	perms: ['SEND_MESSAGES'],
 	execute(message, args) {
 		const NUM_TO_GET = 4; // number of random posts to fetch
 		let sendingArgs = args;

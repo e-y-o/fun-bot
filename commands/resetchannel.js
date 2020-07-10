@@ -9,15 +9,12 @@ module.exports = {
 	description: 'Delete and remake current text channel: `DANGEROUS`',
 	args: false,
 	perms: ['MANAGE_CHANNELS'],
-	cooldown: 10,
+	cooldown: 30,
 	execute(message, args) {
-		if(!checker.checkPerms(message, this.perms)) {
-			return;
-		}
 		const code = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-		message.reply('To confirm deletion of `' + message.channel.name + '`, type `' + code + '` within the next 30 seconds.\n**WARNING: This action is immediate and permanent**');
+		message.reply('to confirm deletion of `' + message.channel.name + '`, type `' + code + '` within the next 30 seconds.\n**WARNING: This action is immediate and permanent**');
 		const validateCode = cd => {
-			if(cd.toString() == code) {
+			if(cd.author == message.author && cd.toString() == code) {
 				return true;
 			}
 			return false;
