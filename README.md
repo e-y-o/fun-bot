@@ -12,22 +12,15 @@ Fun Bot is a Discord bot that pulls content from social media platforms and send
 Current:
 - Reddit
 - Twitter
+- Youtube playback
 
 Future:
 - More Twitter functions
 - More efficient rate limiting/caching?
+- Better looking YouTube commands
 
 ## Configuration
 This bot requires multiple API tokens, stored in a config.json file in the main directory. View sample\_config.json for an example.
 
-##  Dependencies
-[Node.js](https://nodejs.org/)
-
-[Discord.js](https://github.com/discordjs/discord.js)
-Node.js module allowing interaction with the Discord API.
-
-[snoowrap](https://github.com/not-an-aardvark/snoowrap)
-Javascript wrapper for the reddit API.
-
-[Twitter for Node.js](https://github.com/desmondmorris/node-twitter)
-An asynchronous client library for the Twitter REST and Streaming API's.
+## N.B.
+Dependencies should all be included in packages.js, however ffmpeg also requires its binaries be installed on the machine hosting the bot.
