@@ -4,9 +4,14 @@
   "description": "fun-bot's dependencies",
   "main": "index.js",
   "dependencies": {
+    "@discordjs/opus": "^0.3.2",
     "discord.js": "^12.2.0",
+    "ffmpeg": "0.0.4",
+    "simple-youtube-api": "^5.2.1",
     "snoowrap": "^1.21.0",
-    "twitter": "^1.7.1"
+    "sodium": "^3.0.2",
+    "twitter": "^1.7.1",
+    "ytdl-core": "^3.3.0"
   },
   "devDependencies": {},
   "scripts": {
@@ -15,3 +20,4 @@
   "author": "",
   "license": "ISC"
 }
+
